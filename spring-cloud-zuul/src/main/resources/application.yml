@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-cloud-zuul
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+ribbon:
+  okhttp:
+    enabled: true
+
+zuul:
+  routes:
+    api-web:
+      path: /api-web/**
+      serviceId: spring-cloud-web

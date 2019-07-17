@@ -3,5 +3,3 @@ target/
 *.iml
 *.class
 .DS_Store
-*.log
-/logs

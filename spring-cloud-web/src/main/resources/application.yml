@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-cloud-web
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+ribbon:
+  okhttp:
+    enabled: true
+
+feign:
+  hystrix:
+    enabled: true

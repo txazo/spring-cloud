@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.txazo</groupId>
+    <groupId>org.txazo.springcloud</groupId>
     <artifactId>spring-cloud</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -19,29 +19,33 @@
 
     <modules>
         <module>spring-cloud-eureka</module>
+        <module>spring-cloud-service</module>
+        <module>spring-cloud-web</module>
+        <module>spring-cloud-zuul</module>
     </modules>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.8.RELEASE</version>
             </plugin>
         </plugins>
     </build>
