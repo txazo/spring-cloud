@@ -4,6 +4,12 @@ spring:
   # Zipkin配置
   zipkin:
     base-url: http://localhost:8086
+  # Sentinel
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8085
 
 server:
   port: 8081

@@ -21,8 +21,10 @@ public class WebController {
     @Resource
     private UserClient userClient;
 
-    // http://127.0.0.1:8081/spring-cloud-web/user/1
-    // http://127.0.0.1:8080/user-web/spring-cloud-web/user/1
+    /**
+     * http://127.0.0.1:8081/spring-cloud-web/user/1
+     * http://127.0.0.1:8080/user-web/spring-cloud-web/user/1
+     */
     @ResponseBody
     @HystrixCommand(fallbackMethod = "fallbackMethod",
             threadPoolKey = "user",
@@ -30,6 +32,7 @@ public class WebController {
                     @HystrixProperty(name = "coreSize", value = "1"),
                     @HystrixProperty(name = "maxQueueSize", value = "0")
             })
+    // @SentinelResource(value = "sayHello")
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
     public Object getUserInfo(@PathVariable("userId") int userId) {
         return restTemplate.getForObject("http://SPRING-CLOUD-SERVICE/user/" + userId,
