@@ -3,11 +3,6 @@ spring:
     name: spring-cloud-service
   zipkin:
     base-url: http://localhost:8086
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1.0
 
 server:
   port: 8082
