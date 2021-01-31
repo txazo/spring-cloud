@@ -1,6 +1,13 @@
 spring:
   application:
     name: spring-cloud-web
+  zipkin:
+    base-url: http://localhost:8086
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   port: 8081
@@ -23,7 +30,7 @@ hystrix:
     default:
       execution:
         isolation:
-          strategy: Thread
+          strategy: THREAD
   threadpool:
     default:
       coreSize: 1

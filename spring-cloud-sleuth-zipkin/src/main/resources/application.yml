@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-cloud-sleuth-zipkin
+  main:
+    allowBeanDefinitionOverriding: true
+
+server:
+  port: 8086
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
