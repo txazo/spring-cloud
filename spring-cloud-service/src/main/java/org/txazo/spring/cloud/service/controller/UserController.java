@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author tuxiaozhou
+ * @date 2021/1/31
+ */
 @RestController
 @RequestMapping("/")
 public class UserController {

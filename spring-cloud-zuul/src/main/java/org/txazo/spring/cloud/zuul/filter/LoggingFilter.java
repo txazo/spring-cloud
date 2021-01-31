@@ -4,6 +4,10 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
+/**
+ * @author tuxiaozhou
+ * @date 2021/1/31
+ */
 public class LoggingFilter extends ZuulFilter {
 
     @Override

@@ -13,6 +13,7 @@ management:
       server:
         auto-time-requests: false
 
+# Eureka Client配置
 eureka:
   instance:
     hostname: localhost

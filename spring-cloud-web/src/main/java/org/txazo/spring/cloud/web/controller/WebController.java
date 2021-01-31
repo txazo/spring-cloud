@@ -8,6 +8,10 @@ import org.txazo.spring.cloud.web.remote.UserClient;
 
 import javax.annotation.Resource;
 
+/**
+ * @author tuxiaozhou
+ * @date 2021/1/31
+ */
 @RestController
 @RequestMapping(value = "/spring-cloud-web")
 public class WebController {

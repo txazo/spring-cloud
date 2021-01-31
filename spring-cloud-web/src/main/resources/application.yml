@@ -1,12 +1,14 @@
 spring:
   application:
     name: spring-cloud-web
+  # Zipkin配置
   zipkin:
     base-url: http://localhost:8086
 
 server:
   port: 8081
 
+# Eureka Client配置
 eureka:
   instance:
     hostname: localhost
@@ -16,10 +18,12 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
+# Feign配置
 feign:
   hystrix:
     enabled: true
 
+# Hystrix配置
 hystrix:
   command:
     default:

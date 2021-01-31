@@ -11,6 +11,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author tuxiaozhou
+ * @date 2021/1/31
+ */
 public class SpringCloudTest {
 
     private OkHttpClient httpClient;

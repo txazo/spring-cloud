@@ -6,6 +6,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.txazo.spring.cloud.zuul.filter.LoggingFilter;
 
+/**
+ * @author tuxiaozhou
+ * @date 2021/1/31
+ */
 @EnableZuulProxy
 @SpringCloudApplication
 public class Application {
