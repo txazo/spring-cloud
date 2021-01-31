@@ -14,12 +14,28 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
-ribbon:
-  okhttp:
-    enabled: true
-
 zuul:
   routes:
-    api-web:
-      path: /api-web/**
+    user-service:
+      serviceId: spring-cloud-service
+      path: /user-service/**
+    user-web:
       serviceId: spring-cloud-web
+      path: /user-web/**
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: Thread
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

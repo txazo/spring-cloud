@@ -14,17 +14,23 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
-ribbon:
-  okhttp:
-    enabled: true
-
 feign:
   hystrix:
     enabled: true
 
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          strategy: SEMAPHORE
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: Thread
+  threadpool:
+    default:
+      coreSize: 1
+      maxQueueSize: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

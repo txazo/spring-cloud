@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-cloud-eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false # 关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 # 清理间隔时间
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

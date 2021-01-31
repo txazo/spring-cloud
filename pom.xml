@@ -18,7 +18,8 @@
     <name>spring-cloud</name>
 
     <modules>
-        <module>spring-cloud-eureka</module>
+        <module>spring-cloud-eureka-server</module>
+        <module>spring-cloud-hystrix-dashboard</module>
         <module>spring-cloud-service</module>
         <module>spring-cloud-web</module>
         <module>spring-cloud-zuul</module>
